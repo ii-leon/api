@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bpayit IRAQ - لوحة التحكم</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">bpayit <span>IRAQ</span></span>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                        <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                    <span>المحفظة</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="1" x2="12" y2="23"/>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span>التحويلات</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <span>الرسائل</span>
+                    <span class="badge">3</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                    <span>الإعدادات</span>
+                </a>
+            </nav>
+
+            <div class="user-profile">
+                <div class="avatar">أ</div>
+                <div class="user-info">
+                    <span class="user-name">أحمد محمد</span>
+                    <span class="user-email">ahmed@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-right">
+                    <h1>مرحباً، أحمد</h1>
+                    <p>إدارة أموالك بسهولة وأمان</p>
+                </div>
+                <div class="header-left">
+                    <button class="notification-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                        </svg>
+                        <span class="notification-dot"></span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Balance Card -->
+            <section class="balance-section">
+                <div class="balance-card">
+                    <div class="balance-header">
+                        <span class="balance-label">الرصيد المتاح</span>
+                        <div class="security-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            <span>مؤمن</span>
+                        </div>
+                    </div>
+                    <div class="balance-amount">
+                        <span class="currency">IQD</span>
+                        <span class="amount" id="balance">125,847,500</span>
+                    </div>
+                    <div class="balance-actions">
+                        <button class="btn btn-primary" id="depositBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            إيداع
+                        </button>
+                        <button class="btn btn-secondary" id="withdrawBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            سحب
+                        </button>
+                        <button class="btn btn-outline" id="transferBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 1l4 4-4 4"/>
+                                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                                <path d="M7 23l-4-4 4-4"/>
+                                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                            </svg>
+                            تحويل
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            <polyline points="17 6 23 6 23 12"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">+12.5%</span>
+                        <span class="stat-label">نمو الرصيد</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 1l4 4-4 4"/>
+                            <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">24</span>
+                        <span class="stat-label">تحويل هذا الشهر</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">بطاقات نشطة</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Transactions -->
+            <section class="transactions-section">
+                <div class="section-header">
+                    <h2>آخر المعاملات</h2>
+                    <a href="#" class="view-all">عرض الكل</a>
+                </div>
+                <div class="transactions-list">
+                    <div class="transaction-item">
+                        <div class="transaction-icon incoming">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-title">إيداع من بنك الرافدين</span>
+                            <span class="transaction-date">اليوم، 10:30 ص</span>
+                        </div>
+                        <span class="transaction-amount positive">+5,000,000 IQD</span>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon outgoing">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 1l4 4-4 4"/>
+                                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-title">تحويل إلى سارة أحمد</span>
+                            <span class="transaction-date">أمس، 3:45 م</span>
+                        </div>
+                        <span class="transaction-amount negative">-250,000 IQD</span>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon incoming">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-title">استلام من خدمة الدفع</span>
+                            <span class="transaction-date">22 يوليو، 9:15 ص</span>
+                        </div>
+                        <span class="transaction-amount positive">+1,200,000 IQD</span>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon outgoing">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                                <line x1="1" y1="10" x2="23" y2="10"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-title">شراء من متجر إلكتروني</span>
+                            <span class="transaction-date">21 يوليو، 2:20 م</span>
+                        </div>
+                        <span class="transaction-amount negative">-150,000 IQD</span>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon pending">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <div class="transaction-details">
+                            <span class="transaction-title">تحويل معلق إلى محمد علي</span>
+                            <span class="transaction-date">قيد المعالجة</span>
+                        </div>
+                        <span class="transaction-amount pending">500,000 IQD</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Deposit Modal -->
+    <div class="modal" id="depositModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>إيداع أموال</h3>
+                <button class="modal-close" id="closeDepositModal">&times;</button>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label>مبلغ الإيداع</label>
+                    <div class="input-group">
+                        <input type="number" placeholder="0" min="10000" id="depositAmount">
+                        <span class="input-suffix">IQD</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>طريقة الإيداع</label>
+                    <div class="payment-methods">
+                        <label class="payment-method">
+                            <input type="radio" name="depositMethod" value="bank" checked>
+                            <div class="method-card">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>
+                                </svg>
+                                <span>تحويل بنكي</span>
+                            </div>
+                        </label>
+                        <label class="payment-method">
+                            <input type="radio" name="depositMethod" value="zaincash">
+                            <div class="method-card">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="M12 8v8M8 12h8"/>
+                                </svg>
+                                <span>زين كاش</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">تأكيد الإيداع</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Transfer Modal -->
+    <div class="modal" id="transferModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>تحويل أموال</h3>
+                <button class="modal-close" id="closeTransferModal">&times;</button>
+            </div>
+            <form class="modal-form">
+                <div class="form-group">
+                    <label>رقم المحفظة أو البريد الإلكتروني</label>
+                    <input type="text" placeholder="أدخل رقم المحفظة أو البريد" id="recipientEmail">
+                </div>
+                <div class="form-group">
+                    <label>مبلغ التحويل</label>
+                    <div class="input-group">
+                        <input type="number" placeholder="0" min="1000" id="transferAmount">
+                        <span class="input-suffix">IQD</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>ملاحظة (اختياري)</label>
+                    <input type="text" placeholder="أضف ملاحظة" id="transferNote">
+                </div>
+                <div class="form-summary">
+                    <div class="summary-row">
+                        <span>المبلغ</span>
+                        <span id="summaryAmount">0 IQD</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>رسوم التحويل</span>
+                        <span>مجاني</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>الإجمالي</span>
+                        <span id="summaryTotal">0 IQD</span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">تأكيد التحويل</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

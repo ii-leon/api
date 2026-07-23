@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bpayit IRAQ - بوابة الدفع</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="checkout-container">
+        <!-- Header -->
+        <header class="checkout-header">
+            <div class="checkout-logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <span>bpayit <span class="accent">IRAQ</span></span>
+            </div>
+            <div class="secure-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>اتصال آمن</span>
+            </div>
+        </header>
+
+        <main class="checkout-main">
+            <!-- Left Column - Payment Form -->
+            <section class="payment-form-section">
+                <h1>إتمام الدفع</h1>
+                
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="merchant-info">
+                        <div class="merchant-avatar">م</div>
+                        <div class="merchant-details">
+                            <span class="merchant-name">متجر إلكتروني</span>
+                            <span class="merchant-email">merchant@example.com</span>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <span class="item-name">اشتراك سنوي - خطة احترافية</span>
+                        <span class="item-price">250,000 IQD</span>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods-tabs">
+                    <button class="tab-btn active" data-method="card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                            <line x1="1" y1="10" x2="23" y2="10"/>
+                        </svg>
+                        بطاقة ائتمان
+                    </button>
+                    <button class="tab-btn" data-method="wallet">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
+                            <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
+                            <path d="M18 12a2 2 0 0 0 0 4h4v-4z"/>
+                        </svg>
+                        محفظتي
+                    </button>
+                    <button class="tab-btn" data-method="zaincash">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                            <path d="M12 8v8M8 12h8"/>
+                        </svg>
+                        زين كاش
+                    </button>
+                </div>
+
+                <!-- Card Payment Form -->
+                <div class="payment-tab-content active" id="cardTab">
+                    <form id="cardForm">
+                        <div class="form-group">
+                            <label>رقم البطاقة</label>
+                            <div class="card-input-wrapper">
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                <div class="card-icons">
+                                    <span class="card-icon visa">VISA</span>
+                                    <span class="card-icon mastercard">MC</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>تاريخ الانتهاء</label>
+                                <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <div class="cvv-input">
+                                    <input type="password" id="cardCvv" placeholder="123" maxlength="4">
+                                    <svg class="cvv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="12" y1="16" x2="12" y2="12"/>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>اسم حامل البطاقة</label>
+                            <input type="text" id="cardName" placeholder="الاسم كما يظهر على البطاقة">
+                        </div>
+
+                        <div class="form-group">
+                            <label>البريد الإلكتروني</label>
+                            <input type="email" id="email" placeholder="your@email.com">
+                        </div>
+
+                        <button type="submit" class="pay-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                            دفع 250,000 IQD
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Wallet Payment Form -->
+                <div class="payment-tab-content" id="walletTab">
+                    <form id="walletForm">
+                        <div class="wallet-balance-card">
+                            <span class="wallet-label">رصيد محفظتك</span>
+                            <span class="wallet-amount">125,847,500 IQD</span>
+                            <span class="wallet-sufficient">✓ رصيد كافٍ</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>رقم المحفظة</label>
+                            <input type="text" id="walletId" placeholder="أدخل رقم المحفظة" value="**** **** **** 5678">
+                        </div>
+
+                        <div class="form-group">
+                            <label>كلمة مرور المحفظة</label>
+                            <input type="password" id="walletPassword" placeholder="أدخل كلمة المرور">
+                        </div>
+
+                        <button type="submit" class="pay-btn wallet-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/>
+                                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/>
+                            </svg>
+                            الدفع من المحفظة - 250,000 IQD
+                        </button>
+                    </form>
+                </div>
+
+                <!-- ZainCash Payment Form -->
+                <div class="payment-tab-content" id="zaincashTab">
+                    <form id="zaincashForm">
+                        <div class="zaincash-info">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="16" x2="12" y2="12"/>
+                                <line x1="12" y1="8" x2="12.01" y2="8"/>
+                            </svg>
+                            <p>سيتم توجيهك إلى صفحة زين كاش لإتمام الدفع</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>رقم الهاتف (زين كاش)</label>
+                            <input type="tel" id="zaincashPhone" placeholder="07XX XXX XXXX">
+                        </div>
+
+                        <button type="submit" class="pay-btn zaincash-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                            الدفع عبر زين كاش
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span>تشفير SSL 256-بت</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span>PCI DSS معتمد</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        <span>حماية ضد الاحتيال</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column - Order Details -->
+            <aside class="order-details-section">
+                <div class="order-details-card">
+                    <h3>تفاصيل الطلب</h3>
+                    
+                    <div class="detail-row">
+                        <span class="detail-label">المتجر</span>
+                        <span class="detail-value">متجر إلكتروني</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">رقم الطلب</span>
+                        <span class="detail-value order-number">#ORD-2024-78542</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">المنتج</span>
+                        <span class="detail-value">اشتراك سنوي - خطة احترافية</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">المدة</span>
+                        <span class="detail-value">12 شهر</span>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>السعر الأصلي</span>
+                            <span>300,000 IQD</span>
+                        </div>
+                        <div class="price-row discount">
+                            <span>خصم 17%</span>
+                            <span>-50,000 IQD</span>
+                        </div>
+                        <div class="price-row">
+                            <span>رسوم المعالجة</span>
+                            <span>مجاني</span>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="total-row">
+                        <span>الإجمالي</span>
+                        <span class="total-amount">250,000 IQD</span>
+                    </div>
+
+                    <div class="guarantee-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <div class="guarantee-text">
+                            <strong>ضمان استرداد الأموال</strong>
+                            <span>إذا لم تكن راضياً، يمكنك استرداد أموالك خلال 30 يوماً</span>
+                        </div>
+                    </div>
+
+                    <div class="help-links">
+                        <a href="#">سياسة الخصوصية</a>
+                        <a href="#">شروط الخدمة</a>
+                        <a href="#">المساعدة والدعم</a>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer -->
+        <footer class="checkout-footer">
+            <p>© 2024 bpayit IRAQ - جميع الحقوق محفوظة</p>
+            <div class="footer-links">
+                <a href="#">من نحن</a>
+                <a href="#">تواصل معنا</a>
+                <a href="#">الأسئلة الشائعة</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>جاري معالجة الدفع...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-content">
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+            </div>
+            <h2>تم الدفع بنجاح!</h2>
+            <p class="success-message">تم خصم 250,000 IQD من حسابك</p>
+            <div class="success-details">
+                <div class="detail-row">
+                    <span>رقم المعاملة</span>
+                    <span class="order-number">TXN-2024-98765</span>
+                </div>
+                <div class="detail-row">
+                    <span>التاريخ والوقت</span>
+                    <span id="transactionDate"></span>
+                </div>
+            </div>
+            <button class="success-btn" id="successBtn">العودة للمتجر</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
