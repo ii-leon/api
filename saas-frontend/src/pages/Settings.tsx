@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useStore } from '../lib/store'
 import { toast } from 'react-hot-toast'
+import api from '../lib/api'
 
 export default function Settings() {
   const { user, updateSettings, logout } = useStore()
@@ -63,11 +64,7 @@ export default function Settings() {
     }
     setSaving(true)
     try {
-      await fetch('/api/v1/users/change-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${localStorage.getItem('accessToken')}` },
-        body: JSON.stringify({ currentPassword, newPassword }),
-      })
+      await api.post('/users/change-password', { currentPassword, newPassword })
       toast.success('تم تغيير كلمة المرور بنجاح')
       setShowPasswordModal(false)
       setCurrentPassword('')

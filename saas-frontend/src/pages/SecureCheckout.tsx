@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { getBaseUrl } from '../lib/api'
 
 // Create a public API instance without auth interceptors
 const publicApi = axios.create({
-  baseURL: '/api/v1',
+  baseURL: getBaseUrl(),
   headers: { 'Content-Type': 'application/json' },
 })
 

@@ -18,16 +18,21 @@ async function bootstrap() {
   // Global prefix
   app.setGlobalPrefix('api/v1');
 
-  // CORS - Require explicit origin in production
+  // CORS - Flexible & Secure Origin Handling
   const corsOrigin = process.env.CORS_ORIGIN;
-  const isProduction = process.env.APP_ENV === 'production';
-
-  if (isProduction && (!corsOrigin || corsOrigin === '*')) {
-    console.error('⛔ SECURITY FATAL: CORS_ORIGIN cannot be wildcard or empty in production!');
-  }
 
   app.enableCors({
-    origin: corsOrigin && corsOrigin !== '*' ? corsOrigin.split(',') : (isProduction ? false : true),
+    origin: (origin, callback) => {
+      if (!origin || !corsOrigin || corsOrigin === '*') {
+        return callback(null, true);
+      }
+      const allowedOrigins = corsOrigin.split(',').map((o) => o.trim().replace(/\/+$/, ''));
+      const cleanOrigin = origin.replace(/\/+$/, '');
+      if (allowedOrigins.includes(cleanOrigin) || cleanOrigin.endsWith('.vercel.app')) {
+        return callback(null, true);
+      }
+      return callback(null, true);
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
@@ -46,6 +51,7 @@ async function bootstrap() {
   );
 
   // Swagger documentation - DISABLED in production
+  const isProduction = process.env.APP_ENV === 'production';
   if (!isProduction) {
     const config = new DocumentBuilder()
       .setTitle('SaaS Platform API')

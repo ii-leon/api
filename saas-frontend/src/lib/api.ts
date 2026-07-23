@@ -1,7 +1,19 @@
 import axios from 'axios'
 
+export const getBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL
+  if (envUrl) {
+    let clean = envUrl.replace(/\/+$/, '')
+    if (!clean.endsWith('/api/v1')) {
+      clean += '/api/v1'
+    }
+    return clean
+  }
+  return '/api/v1'
+}
+
 const api = axios.create({
-  baseURL: '/api/v1',
+  baseURL: getBaseUrl(),
   headers: { 'Content-Type': 'application/json' },
 })
 
@@ -20,7 +32,7 @@ api.interceptors.response.use(
       const refreshToken = localStorage.getItem('refreshToken')
       if (refreshToken) {
         try {
-          const { data } = await axios.post('/api/v1/auth/refresh', { refreshToken })
+          const { data } = await axios.post(`${getBaseUrl()}/auth/refresh`, { refreshToken })
           localStorage.setItem('accessToken', data.accessToken)
           localStorage.setItem('refreshToken', data.refreshToken)
           originalRequest.headers.Authorization = `Bearer ${data.accessToken}`
@@ -37,3 +49,4 @@ api.interceptors.response.use(
 )
 
 export default api
+
