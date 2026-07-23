@@ -47,7 +47,9 @@ import { NotificationModule } from './modules/notification/notification.module';
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
         type: 'single',
-        url: `redis://${config.get('REDIS_HOST', 'localhost')}:${config.get('REDIS_PORT', 6379)}`,
+        url:
+          config.get('REDIS_URL') ||
+          `redis://${config.get('REDIS_HOST', 'localhost')}:${config.get('REDIS_PORT', 6379)}`,
         password: config.get('REDIS_PASSWORD'),
         db: config.get<number>('REDIS_DB', 0),
       }),
