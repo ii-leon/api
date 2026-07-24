@@ -60,18 +60,11 @@ export default function Register() {
 
   const isFormValid = useCallback(() => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    const hasMinLength = form.password.length >= 8
-    const hasUpper = /[A-Z]/.test(form.password)
-    const hasLower = /[a-z]/.test(form.password)
-    const hasNumber = /\d/.test(form.password)
-    const hasSpecial = /[@$!%*?&#]/.test(form.password)
-    const strongPassword = hasMinLength && hasUpper && hasLower && hasNumber && hasSpecial
+    const validEmail = form.email.length > 0 && emailRegex.test(form.email) && emailAvailable !== false
+    const validUsername = form.username.length >= 3 && /^[a-zA-Z0-9_]+$/.test(form.username) && usernameAvailable !== false
+    const validPassword = form.password.length >= 6
 
-    return (
-      form.email.length > 0 && emailRegex.test(form.email) && emailAvailable === true &&
-      form.username.length >= 3 && /^[a-zA-Z0-9_]+$/.test(form.username) && usernameAvailable === true &&
-      strongPassword
-    )
+    return validEmail && validUsername && validPassword
   }, [form, emailAvailable, usernameAvailable])
 
   const handleSubmit = async (e: React.FormEvent) => {
